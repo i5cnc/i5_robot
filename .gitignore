@@ -1,3 +1,11 @@
+# eclipse config 
+.project
+.cproject
+
+#setup assistant
+.setup_assistant
+
+
 # Prerequisites
 *.d
 
