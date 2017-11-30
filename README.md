@@ -28,7 +28,7 @@ To install i5_robot packages, you need firstly create a catkine workspace.You ca
 Once you create a cakin workspace(named *catkin_ws*), you can checkout the i5_robot src and compile it.
 ```
 cd ~/catkin_ws/src
-git clone ssh://git@phab.i5cnc.com/source/i5_robot.git
+git clone ssh://git@phab.i5cnc.com/source/i5_robot.git -b kinetic-devel
 cd ~/catkin_ws
 catkin_make
 ```
