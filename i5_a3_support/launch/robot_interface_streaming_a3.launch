@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+  Manipulator specific version of 'robot_interface_streaming.launch'.
+
+  Defaults provided for a3:
+   - 6 joints
+
+  Usage:
+    robot_interface_streaming_a3.launch robot_ip:=<value>
+-->
+<launch>
+  <arg name="robot_ip" doc="IP of controller" />
+
+  <rosparam command="load" file="$(find i5_a3_support)/config/joint_names_a3.yaml" />
+
+  <include file="$(find i5_driver)/launch/robot_interface_streaming.launch">
+    <arg name="robot_ip"   value="$(arg robot_ip)" />
+  </include>
+</launch>

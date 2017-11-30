@@ -1,0 +1,1 @@
+rosrun moveit_ikfast create_ikfast_moveit_plugin.py i5_a3 manipulator i5_a3_ik_fast /home/i5/catkin_ws/src/i5_robot/i5_a3_ik_fast/src/i5_a3_manipulator_ikfast_solver.cpp
