@@ -34,11 +34,6 @@ git clone git@github.com:i5cnc/i5_robot.git -b kinetic-devel
 cd ~/catkin_ws
 catkin_make
 ```
-Note: remember source your catkin_ws setup file before you compile:
-```
-source ~/catkin_ws/devel/setup.bash
-```
-
 
 
 ## How to run (use a3 robot as an example)
