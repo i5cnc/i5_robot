@@ -6,12 +6,18 @@ this repository contains ROS packages which are fully compatible with the [ROS-I
 
 Now, we only tested on ubuntu 16.04(Xenial) with ROS kinetic.
 
-**i5_driver** is a package that contains some i5 specified ROS msgs and srvs.
-**i5_driver** is a package that communicate to the controller and convert to ROS standard communication.
-**i5_resources** is a package that defines some command urdf macro
-**i5_a3_support** is a package that contains a3 robot(an 3 kilogram 6 joint industrial manipulator) urdf and mesh.
-**i5_a3_ik_fast** is a package that contains ik fast kinematics algorithm for a3 robot.
-**i5_a3_moveit_config** is a package that contains moveit config for a3 robot.
+- **i5_driver** is a package that contains some i5 specified ROS msgs and srvs.
+
+- **i5_driver** is a package that communicate to the controller and convert to ROS standard communication.
+
+- **i5_resources** is a package that defines some command urdf macro
+
+- **i5_a3_support** is a package that contains a3 robot(an 3 kilogram 6 joint industrial manipulator) urdf and mesh.
+
+- **i5_a3_ik_fast** is a package that contains ik fast kinematics algorithm for a3 robot.
+
+- **i5_a3_moveit_config** is a package that contains moveit config for a3 robot.
+
 
 
 ## How to install
