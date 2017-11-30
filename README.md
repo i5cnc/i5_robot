@@ -4,10 +4,10 @@
 
 this repository contains ROS packages which are fully compatible with the [ROS-Industrial](http://wiki.ros.org/Industrial) spec.
 
-Now, we only tested on ubuntu 16.04(Xenial) with ros kinetic.
+Now, we only tested on ubuntu 16.04(Xenial) with ROS kinetic.
 
-**i5_driver** is a package that contains some i5 specified ros msgs and srvs.
-**i5_driver** is a package that communicate to the controller and convert to ros standard communication.
+**i5_driver** is a package that contains some i5 specified ROS msgs and srvs.
+**i5_driver** is a package that communicate to the controller and convert to ROS standard communication.
 **i5_resources** is a package that defines some command urdf macro
 **i5_a3_support** is a package that contains a3 robot(an 3 kilogram 6 joint industrial manipulator) urdf and mesh.
 **i5_a3_ik_fast** is a package that contains ik fast kinematics algorithm for a3 robot.
@@ -15,15 +15,15 @@ Now, we only tested on ubuntu 16.04(Xenial) with ros kinetic.
 
 
 ## How to install
-As a ros industrial package, you need install ROS && MoveIt && ROS Industrial firstly.
+As a ROS Industrial package, you need install ROS && MoveIt && ROS Industrial firstly.
 
 Install Steps:
 
-1. Install ros follow [this](http://wiki.ros.org/kinetic/Installation/Ubuntu) page
+1. Install ROS follow [this](http://wiki.ros.org/kinetic/Installation/Ubuntu) page
 
-2. Install moveit
+2. Install MoveIt
 `sudo apt install ros-kinetic-moveit*`
-3. Install ros_industrial
+3. Install ROS Industrial
 `sudo apt install ros-kinetic-industrial*`	
 4. Install i5_robot
 To install i5_robot packages, you need firstly create a catkine workspace.You can do it follow [this](http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment) page.
@@ -53,7 +53,7 @@ Steps:
 you can power on the robot and enable it by the teach pandent(following the operation manual),
 or from ROS side (refer to the i5_driver README)
 
-2. In ros pc, run (take moveit as an example):
+2. In ROS pc, run (take moveit as an example):
 `roslaunch i5_a3_moveit_config moveit_planning_execution.launch sim:=false robot_ip:=your_robot_ip`
 
 3. Change the robot to`playback`or`remote`mode by robot teach pandent or from ROS side (refer to the i5_driver README). **(Remember you must switch the robot to `playback` or `remote` mode not 'teach' mode, because teach is used for manual jog)**
@@ -67,5 +67,5 @@ Note:
 ```
 source ~/catkin_ws/devel/setup.bash
 ```
-2. Do not try to manipulate the robot from teach pendant and ros pc simultaneously (for example, sending trajcectory from ros and execute a program from teach pandent simultaneously).
+2. Do not try to manipulate the robot from teach pendant and ROS side simultaneously (for example, sending trajcectory from ROS and execute a program from teach pandent simultaneously).
 
