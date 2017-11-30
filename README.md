@@ -19,11 +19,11 @@ As a ros industrial package, you need install ROS && MoveIt && ROS Industrial fi
 
 Install Steps:
 
-1. Install ros follow [this](http://wiki.ros.org/kinetic/Installation/Ubuntu) page
+1. Install ROS follow [this](http://wiki.ros.org/kinetic/Installation/Ubuntu) page
 
-2. Install moveit
+2. Install MoveIt
 `sudo apt install ros-kinetic-moveit*`
-3. Install ros_industrial
+3. Install ROS Industrial
 `sudo apt install ros-kinetic-industrial*`	
 4. Install i5_robot
 To install i5_robot packages, you need firstly create a catkine workspace.You can do it follow [this](http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment) page.
