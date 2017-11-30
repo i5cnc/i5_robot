@@ -2,7 +2,7 @@
 
 [ROS-Industrial](http://wiki.ros.org/Industrial) i5 robot metapackage.
 
-this repository is a collection of ros packages which are packages are fully compatible with the [ROS-Industrial](http://wiki.ros.org/Industrial) spec.
+this repository contains ROS packages which are fully compatible with the [ROS-Industrial](http://wiki.ros.org/Industrial) spec.
 
 Now, we only tested on ubuntu 16.04(Xenial) with ros kinetic.
 
@@ -15,10 +15,12 @@ Now, we only tested on ubuntu 16.04(Xenial) with ros kinetic.
 
 
 ## How to install
-As a ros industrial package, you need install ros && moveit && ros_industrial firstly.
+As a ros industrial package, you need install ROS && MoveIt && ROS Industrial firstly.
 
+Install Steps:
 
 1. Install ros follow [this](http://wiki.ros.org/kinetic/Installation/Ubuntu) page
+
 2. Install moveit
 `sudo apt install ros-kinetic-moveit*`
 3. Install ros_industrial
@@ -28,7 +30,7 @@ To install i5_robot packages, you need firstly create a catkine workspace.You ca
 Once you create a cakin workspace(named *catkin_ws*), you can checkout the i5_robot src and compile it.
 ```
 cd ~/catkin_ws/src
-git clone ssh://git@phab.i5cnc.com/source/i5_robot.git -b kinetic-devel
+git clone git@github.com:i5cnc/i5_robot.git -b kinetic-devel
 cd ~/catkin_ws
 catkin_make
 ```
@@ -45,17 +47,25 @@ source ~/catkin_ws/devel/setup.bash
 
 ***WARNING: INDUSTRIAL ROBOTS ARE VERY DANGEROUS AND CAN SERIOUSLY INJURE OR KILL. THE ROS-INDUSTRIAL SOFTWARE IS PROVIDED UNDER THE TERMS OF THE BSD LICENSE (I.E. AS-IS AND WITH NO WARRANTY). WHEN OPERATING AN INDUSTRIAL ROBOT UNDER ROS-INDUSTRIAL CONTROL, MAKE CERTAIN THAT NO ONE IS WITHIN THE ROBOT WORKSPACE AND THE E-STOP IS UNDER OPERATOR CONTROL.***
 
-
-
+Steps:
 
 1. Power on and enable the robot.
-
 you can power on the robot and enable it by the teach pandent(following the operation manual),
-or from ros side (refer to the i5_driver README)
+or from ROS side (refer to the i5_driver README)
+
 2. In ros pc, run (take moveit as an example):
 `roslaunch i5_a3_moveit_config moveit_planning_execution.launch sim:=false robot_ip:=your_robot_ip`
-3. Change the robot to`playback`or`remote`mode by robot teach pandent. **(Remember you must switch the robot to `playback` or `remote` mode not 'teach' mode, because teach is used for manual jog)**
+
+3. Change the robot to`playback`or`remote`mode by robot teach pandent or from ROS side (refer to the i5_driver README). **(Remember you must switch the robot to `playback` or `remote` mode not 'teach' mode, because teach is used for manual jog)**
+
 4. Then, you can try to plan and execute in rviz and robot will move follow the trajectory.
 
-***Remember, do not try to manipulate the robot from teach pendant and ros pc simultaneously (for example, sending trajcectory from ros and execute a program from teach pandent simultaneously).***
+
+Note: 
+
+1. Remember to source your catkin_ws setup file before you run roslaunch:
+```
+source ~/catkin_ws/devel/setup.bash
+```
+2. Do not try to manipulate the robot from teach pendant and ros pc simultaneously (for example, sending trajcectory from ros and execute a program from teach pandent simultaneously).
 
