@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="i5_a3">  
+  	<link name="world"/>  
+	<xacro:include filename="$(find i5_a3_support)/urdf/a3_macro.xacro"/>
+  	<xacro:i5_a3 prefix=""/>
+  	<joint name="fixed" type="fixed">
+    	<parent link="world"/>
+    	<child link="base_link"/>
+  	</joint>
+</robot>

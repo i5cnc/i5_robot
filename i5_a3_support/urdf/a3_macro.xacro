@@ -1,0 +1,271 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+<!-- Include all common properties -->
+  <xacro:include filename="$(find i5_resources)/urdf/common_colours.xacro"/>
+  <xacro:include filename="$(find i5_resources)/urdf/common_constants.xacro"/>
+  <xacro:include filename="$(find i5_resources)/urdf/common_materials.xacro"/>
+<!-- Robot DH parameters define joint-->
+<xacro:property name="lengthpar1" value="0.3215" />
+<xacro:property name="lengthpar2" value="0.27" />
+<xacro:property name="lengthpar3" value="0.07" />
+<xacro:property name="lengthpar4" value="0.05" />
+<xacro:property name="lengthpar5" value="0.299" />
+<xacro:property name="lengthpar6" value="0.0785"/>
+<!-- Robot visual and  collision dir-->
+<xacro:property name="visual_base" value="package://i5_a3_support/meshes/a3/visual/base_link.stl" />
+<xacro:property name="visual_link1" value="package://i5_a3_support/meshes/a3/visual/link1.stl" />
+<xacro:property name="visual_link2" value="package://i5_a3_support/meshes/a3/visual/link2.stl" />
+<xacro:property name="visual_link3" value="package://i5_a3_support/meshes/a3/visual/link3.stl" />
+<xacro:property name="visual_link4" value="package://i5_a3_support/meshes/a3/visual/link4.stl" />
+<xacro:property name="visual_link5" value="package://i5_a3_support/meshes/a3/visual/link5.stl" />
+<xacro:property name="visual_link6" value="package://i5_a3_support/meshes/a3/visual/link6.stl" />
+
+<xacro:property name="collision_base" value="package://i5_a3_support/meshes/a3/collision/base_link.stl" />
+<xacro:property name="collision_link1" value="package://i5_a3_support/meshes/a3/collision/link1.stl" />
+<xacro:property name="collision_link2" value="package://i5_a3_support/meshes/a3/collision/link2.stl" />
+<xacro:property name="collision_link3" value="package://i5_a3_support/meshes/a3/collision/link3.stl" />
+<xacro:property name="collision_link4" value="package://i5_a3_support/meshes/a3/collision/link4.stl" />
+<xacro:property name="collision_link5" value="package://i5_a3_support/meshes/a3/collision/link5.stl" />
+<xacro:property name="collision_link6" value="package://i5_a3_support/meshes/a3/collision/link6.stl" />
+<!-- Robot link mass-->
+<xacro:property name="mass_link1" value="6.30714651" />
+<xacro:property name="mass_link2" value="4.74603309" />
+<xacro:property name="mass_link3" value="3.61734129" />
+<xacro:property name="mass_link4" value="2.14173747" />
+<xacro:property name="mass_link5" value="1.39756577" />
+<xacro:property name="mass_link6" value="0.07855314"/>
+
+<!-- Limit of joints-->
+<xacro:property name="joint1_upper_limit" value="2.827433388230814" />
+<xacro:property name="joint2_upper_limit" value="2.216568150032799" />
+<xacro:property name="joint3_upper_limit" value="1.082104136236484" />
+<xacro:property name="joint4_upper_limit" value="3.089232776029963" />
+<xacro:property name="joint5_upper_limit" value="1.867502299633933" />
+<xacro:property name="joint6_upper_limit" value="6.230825429619756" />
+
+
+<xacro:property name="joint1_lower_limit" value="-2.827433388230814" />
+<xacro:property name="joint2_lower_limit" value="-1.518436449235067" />
+<xacro:property name="joint3_lower_limit" value="-1.780235837034216" />
+<xacro:property name="joint4_lower_limit" value="-3.089232776029963" />
+<xacro:property name="joint5_lower_limit" value="-1.867502299633933" />
+<xacro:property name="joint6_lower_limit" value="-6.230825429619756" />
+
+<xacro:macro name="i5_a3" params="prefix">
+
+
+<!-- link list -->
+<link name="${prefix}base_link">
+	<visual>
+		<geometry>
+			<mesh filename="${visual_base}"/>
+		</geometry>
+    	<xacro:material_i5_white name="white"/>
+	</visual>
+	<collision>
+		<geometry>
+			<mesh filename="${collision_base}" />
+		</geometry>
+    	<xacro:material_i5_yellow name="yellow"/>
+	</collision>
+</link>
+<link name="${prefix}link_1">
+	<visual>
+		<geometry>
+			<mesh filename="${visual_link1}" />
+		</geometry>
+    	<xacro:material_i5_white name="white"/>
+	</visual>
+	<collision>
+		<geometry>
+			<mesh filename="${collision_link1}" />
+		</geometry>
+    	<xacro:material_i5_yellow name="yellow"/>
+	</collision>
+
+    <inertial>
+      <origin xyz="0.02871795 -0.01560624 0.26837199" rpy="0.0 0.0 0.0"/>
+      <mass value="${mass_link1}"/>
+      <inertia
+	  ixx="0.04357680" ixy="-0.00206012" ixz="0.00889497"
+	  iyy="0.04518431" iyz="-0.00497282"
+	  izz="0.03284441"/>
+    </inertial>
+</link>
+<link name="${prefix}link_2">
+	<visual>
+		<geometry>
+			<mesh filename="${visual_link2}" />
+		</geometry>
+    	<xacro:material_i5_white name="white"/>
+	</visual>
+	<collision>
+		<geometry>
+			<mesh filename="${collision_link2}" />
+		</geometry>
+    	<xacro:material_i5_yellow name="yellow"/>
+	</collision>
+
+    <inertial>
+      <origin xyz="-0.00109202 -0.13604744 -0.02344836" rpy="0.0 0.0 0.0"/>
+      <mass value="${mass_link2}"/>
+      <inertia
+	  ixx="0.06327383" ixy="0.00004884" ixz="-0.00038454"
+	  iyy="0.02015817" iyz="-0.00034710"
+	  izz="0.05286486"/>
+    </inertial>
+</link>
+<link name="${prefix}link_3">
+	<visual>
+		<geometry>
+			<mesh filename="${visual_link3}" />
+		</geometry>
+    	<xacro:material_i5_white name="white"/>
+	</visual>
+	<collision>
+		<geometry>
+			<mesh filename="${collision_link3}" />
+		</geometry>
+    	<xacro:material_i5_yellow name="yellow"/>
+	</collision>
+
+    <inertial>
+      <origin xyz="0.06285180 0.06483556 -0.00131193" rpy="0.0 0.0 0.0"/>
+      <mass value="${mass_link3}"/>
+      <inertia
+	  ixx="0.01479961" ixy="0.00219315" ixz="0.00031335"
+	  iyy="0.00830250" iyz="0.00031368"
+	  izz="0.01833254"/>
+    </inertial> 
+</link>
+<link name="${prefix}link_4">
+	<visual>
+		<geometry>
+			<mesh filename="${visual_link4}" />
+		</geometry>
+    	<xacro:material_i5_white name="white"/>
+	</visual>
+	<collision>
+		<geometry>
+			<mesh filename="${collision_link4}" />
+		</geometry>
+    	<xacro:material_i5_yellow name="yellow"/>
+	</collision>
+
+    <inertial>
+      <origin xyz="0.00078233 0.01962462 0.07572740" rpy="0.0 0.0 0.0"/>
+      <mass value="${mass_link4}"/>
+      <inertia
+	  ixx="0.00972215" ixy="0.00000305" ixz="0.00003964"
+	  iyy="0.00874755" iyz="-0.00174588"
+	  izz="0.00326536"/>
+    </inertial>
+</link>
+<link name="${prefix}link_5">
+	<visual>
+		<geometry>
+			<mesh filename="${visual_link5}" />
+		</geometry>
+    	<xacro:material_i5_white name="white"/>
+	</visual>
+	<collision>
+		<geometry>
+			<mesh filename="${collision_link5}" />
+		</geometry>
+    	<xacro:material_i5_yellow name="yellow"/>
+	</collision>
+    <inertial>
+      <origin xyz="0.00002864 -0.02906346 -0.00131185" rpy="0.0 0.0 0.0"/>
+      <mass value="${mass_link5}"/>
+      <inertia
+	  ixx="0.00241227" ixy="0.00000410" ixz="0.00000860"
+	  iyy="0.00086254" iyz="-0.00005889"
+	  izz="0.00251468"/>
+    </inertial>
+</link>
+<link name="${prefix}link_6">
+	<visual>
+		<geometry>
+			<mesh filename="${visual_link6}" />
+		</geometry>
+    	<xacro:material_i5_white name="white"/>
+	</visual>
+	<collision>
+		<geometry>
+			<mesh filename="${collision_link6}" />
+		</geometry>
+    	<xacro:material_i5_yellow name="yellow"/>
+	</collision>
+    <inertial>
+      <origin xyz="0 0 0.08429974" rpy="0 0 0"/>
+      <mass value="${mass_link6}"/>
+      <inertia
+	  ixx="0.00002229" ixy="0.0" ixz="0.0"
+	  iyy="0.00002229" iyz="0.0"
+	  izz="0.00004072"/>
+    </inertial>
+</link>
+
+<link name="${prefix}base" />
+<link name="${prefix}tool0"/>
+<!-- end of link list -->
+
+
+<!-- joint list -->
+<joint name="${prefix}joint_1" type="revolute">
+	<parent link="${prefix}base_link"/>
+	<child link="${prefix}link_1"/>
+	<origin xyz="0 0 0" rpy="0 0 0"/>
+	<axis xyz="0 0 1" />
+	<limit lower="${joint1_lower_limit}" upper="${joint1_upper_limit}" effort="100" velocity="4.01425" />
+</joint>
+<joint name="${prefix}joint_2" type="revolute">
+	<parent link="${prefix}link_1"/>
+	<child link="${prefix}link_2"/>
+        <origin xyz="${lengthpar4} 0 ${lengthpar1}" rpy="${-PI_2} 0 0"/>
+	<axis xyz="0 0 1" />
+	<limit lower="${joint2_lower_limit}" upper="${joint2_upper_limit}" effort="100" velocity="4.01425" />
+</joint>
+<joint name="${prefix}joint_3" type="revolute">
+	<parent link="${prefix}link_2"/>
+	<child link="${prefix}link_3"/>
+        <origin xyz="0 ${-lengthpar2} 0" rpy="0 0 ${-PI_2}"/>
+	<axis xyz="0 0 1" />
+	<limit lower="${joint3_lower_limit}" upper="${joint3_upper_limit}" effort="100" velocity="4.36332" />
+</joint>
+<joint name="${prefix}joint_4" type="revolute">
+	<parent link="${prefix}link_3"/>
+	<child link="${prefix}link_4"/>
+       <origin xyz="${lengthpar3} ${lengthpar5} 0" rpy="${PI_2} 0 0"/>
+	<axis xyz="0 0 1" />
+	<limit lower="${joint4_lower_limit}" upper="${joint4_upper_limit}" effort="100" velocity="5.58505" />
+</joint>
+<joint name="${prefix}joint_5" type="revolute">
+	<parent link="${prefix}link_4"/>
+	<child link="${prefix}link_5"/>
+        <origin xyz="0 0 0" rpy="${PI_2} 0 0"/>
+	<axis xyz="0 0 1" />
+	<limit lower="${joint5_lower_limit}" upper="${joint5_upper_limit}" effort="5.5" velocity="5.58505" />
+</joint>
+<joint name="${prefix}joint_6" type="revolute">
+	<parent link="${prefix}link_5"/>
+	<child link="${prefix}link_6"/>
+        <origin xyz="0  ${-lengthpar6} 0" rpy="${PI_2} 0 0"/>
+	<axis xyz="0 0 1" />
+	<limit lower="${joint6_lower_limit}" upper="${joint6_upper_limit}" effort="4.6" velocity="7.3303" />
+</joint>
+<joint name="${prefix}joint_6-tool0" type="fixed">
+      <parent link="${prefix}link_6"/>
+      <child link="${prefix}tool0"/>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+</joint>
+
+<joint name="${prefix}base_link-base" type="fixed">
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}base"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+</joint>
+<!-- end of joint list -->
+
+</xacro:macro>
+</robot>

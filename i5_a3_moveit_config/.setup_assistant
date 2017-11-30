@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: i5_a3_support
+    relative_path: urdf/a3.xacro
+  SRDF:
+    relative_path: config/i5_a3.srdf
+  CONFIG:
+    author_name: i5
+    author_email: info@i5cnc.com
+    generated_timestamp: 1494899458
