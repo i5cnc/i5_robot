@@ -28,7 +28,7 @@ include_directories(
 
 
 
-# non-swapping robot state node
+
 add_executable(${PROJECT_NAME}_robot_state
   src/robot_state_node.cpp
   src/joint_feedback_handler.cpp
@@ -40,7 +40,7 @@ target_link_libraries(${PROJECT_NAME}_robot_state
 set_target_properties(${PROJECT_NAME}_robot_state
   PROPERTIES OUTPUT_NAME robot_state
   PREFIX "")
-
+add_dependencies(${PROJECT_NAME}_robot_state i5_msgs_generate_messages_cpp)
 
 
 
@@ -60,6 +60,7 @@ target_link_libraries(${PROJECT_NAME}_io_service
   set_target_properties(${PROJECT_NAME}_io_service
   PROPERTIES OUTPUT_NAME io_service
   PREFIX "")
+add_dependencies(${PROJECT_NAME}_io_service i5_msgs_generate_messages_cpp)
   
   
   # system_service node
@@ -76,7 +77,7 @@ target_link_libraries(${PROJECT_NAME}_system_service
   set_target_properties(${PROJECT_NAME}_system_service
   PROPERTIES OUTPUT_NAME system_service
   PREFIX "")
-
+add_dependencies(${PROJECT_NAME}_system_service i5_msgs_generate_messages_cpp)
 
 
 
@@ -92,6 +93,7 @@ target_link_libraries(${PROJECT_NAME}_motion_streaming_interface
 set_target_properties(${PROJECT_NAME}_motion_streaming_interface
   PROPERTIES OUTPUT_NAME motion_streaming_interface
   PREFIX "")
+add_dependencies(${PROJECT_NAME}_motion_streaming_interface i5_msgs_generate_messages_cpp)
 
 
 

@@ -73,6 +73,8 @@ find_package(catkin REQUIRED COMPONENTS
  generate_messages(
    DEPENDENCIES
    industrial_msgs#   std_msgs#   trajectory_msgs
+   trajectory_msgs
+   std_msgs
  )
 
 ################################################
@@ -107,7 +109,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES i5_msgs
-#  CATKIN_DEPENDS genmsg industrial_msgs message_generation message_runtime std_msgs trajectory_msgs
+  CATKIN_DEPENDS industrial_msgs std_msgs trajectory_msgs
 #  DEPENDS system_lib
 )
 
