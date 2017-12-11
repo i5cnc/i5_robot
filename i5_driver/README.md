@@ -6,7 +6,7 @@ Connection services are classified into four types:
 - **system** provide some system level interface.(enable, disable, etc.)
 - **state** provide the robot and joint state interface.
 
-## motion
+# motion
 the node are **motion_streaming_interface**
 Based on the ros industrial spec, two types motion control interface are provided, **stream** and **download**.
 **download** will send the trajectory point-by-point to the controller, then execute all at once. If a new download is sending to the controller while an existing downloaded motion is running in the controller,the existing motion will be cancelled and the new motion will be executed.
@@ -37,16 +37,14 @@ The launch file **motion_streaming_interface.launch** has an arg called **use_pt
 For example, MoveIt implemented its own time parameterization.So when user use MoveIt with i5 robot, you can directly use **motion_streaming_interface** in the **i5_driver** package.
 
 But for some applications, if user only knows the path points and duration time,then only **motion_streaming_interface** in the **industrial_robot_client** package can be used.
-
-
-##io
+#io
 the node is **io_service**
 Currently, io provides two services:
 - WriteDigitalOutput
 - ReadDigitalInput
 
 
-##system
+#system
 the node is **system_service**
 Currently, system provides one service:
 - ExecuteApplicationCmd
@@ -64,7 +62,7 @@ Currently, system provides one service:
 
 
 
-##state
+#state
 the node is **robot_state**
 According to ros indsutrial spec, all the following topics are provided
 - feedback_states
