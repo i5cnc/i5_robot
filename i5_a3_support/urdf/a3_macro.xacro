@@ -217,42 +217,42 @@
 	<child link="${prefix}link_1"/>
 	<origin xyz="0 0 0" rpy="0 0 0"/>
 	<axis xyz="0 0 1" />
-	<limit lower="${joint1_lower_limit}" upper="${joint1_upper_limit}" effort="100" velocity="4.01425" />
+	<limit lower="${joint1_lower_limit}" upper="${joint1_upper_limit}" effort="100" velocity="1" />
 </joint>
 <joint name="${prefix}joint_2" type="revolute">
 	<parent link="${prefix}link_1"/>
 	<child link="${prefix}link_2"/>
         <origin xyz="${lengthpar4} 0 ${lengthpar1}" rpy="${-PI_2} 0 0"/>
 	<axis xyz="0 0 1" />
-	<limit lower="${joint2_lower_limit}" upper="${joint2_upper_limit}" effort="100" velocity="4.01425" />
+	<limit lower="${joint2_lower_limit}" upper="${joint2_upper_limit}" effort="100" velocity="1" />
 </joint>
 <joint name="${prefix}joint_3" type="revolute">
 	<parent link="${prefix}link_2"/>
 	<child link="${prefix}link_3"/>
         <origin xyz="0 ${-lengthpar2} 0" rpy="0 0 ${-PI_2}"/>
 	<axis xyz="0 0 1" />
-	<limit lower="${joint3_lower_limit}" upper="${joint3_upper_limit}" effort="100" velocity="4.36332" />
+	<limit lower="${joint3_lower_limit}" upper="${joint3_upper_limit}" effort="100" velocity="1" />
 </joint>
 <joint name="${prefix}joint_4" type="revolute">
 	<parent link="${prefix}link_3"/>
 	<child link="${prefix}link_4"/>
        <origin xyz="${lengthpar3} ${lengthpar5} 0" rpy="${PI_2} 0 0"/>
 	<axis xyz="0 0 1" />
-	<limit lower="${joint4_lower_limit}" upper="${joint4_upper_limit}" effort="100" velocity="5.58505" />
+	<limit lower="${joint4_lower_limit}" upper="${joint4_upper_limit}" effort="100" velocity="1" />
 </joint>
 <joint name="${prefix}joint_5" type="revolute">
 	<parent link="${prefix}link_4"/>
 	<child link="${prefix}link_5"/>
         <origin xyz="0 0 0" rpy="${PI_2} 0 0"/>
 	<axis xyz="0 0 1" />
-	<limit lower="${joint5_lower_limit}" upper="${joint5_upper_limit}" effort="5.5" velocity="5.58505" />
+	<limit lower="${joint5_lower_limit}" upper="${joint5_upper_limit}" effort="5.5" velocity="1" />
 </joint>
 <joint name="${prefix}joint_6" type="revolute">
 	<parent link="${prefix}link_5"/>
 	<child link="${prefix}link_6"/>
         <origin xyz="0  ${-lengthpar6} 0" rpy="${PI_2} 0 0"/>
 	<axis xyz="0 0 1" />
-	<limit lower="${joint6_lower_limit}" upper="${joint6_upper_limit}" effort="4.6" velocity="7.3303" />
+	<limit lower="${joint6_lower_limit}" upper="${joint6_upper_limit}" effort="4.6" velocity="1" />
 </joint>
 <joint name="${prefix}joint_6-tool0" type="fixed">
       <parent link="${prefix}link_6"/>
