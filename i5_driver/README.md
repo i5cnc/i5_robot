@@ -37,6 +37,7 @@ The launch file **motion_streaming_interface.launch** has an arg called **use_pt
 For example, MoveIt implemented its own time parameterization.So when user use MoveIt with i5 robot, you can directly use **motion_streaming_interface** in the **i5_driver** package.
 
 But for some applications, if user only knows the path points and duration time,then only **motion_streaming_interface** in the **industrial_robot_client** package can be used.
+
 #io
 the node is **io_service**
 Currently, io provides two services:
