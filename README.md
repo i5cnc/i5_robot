@@ -60,9 +60,13 @@ or from ROS side (refer to the i5_driver README)
 2. In ROS pc, run (take moveit as an example):
 `roslaunch i5_a3_moveit_config moveit_planning_execution.launch sim:=false robot_ip:=your_robot_ip`
 There are two args you must set for the launch.
+<<<<<<< HEAD
 
 **sim** set sim to true if you only want to run a simulator in ROS. In this case, no controller will be connected.
 
+=======
+**sim** set sim to true if you only want to run a simulator in ROS. In this case, no controller will be connected.
+>>>>>>> fee1c4338bf6a6fc49b04871b3a0e4951490cd14
 **robot_ip** is the robot ip address you want connect, for example: `192.168.1.100`. If `sim` set to true, `robot_ip` is not needed.
 
 
