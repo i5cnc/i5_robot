@@ -58,15 +58,11 @@ you can power on the robot and enable it by the teach pandent(following the oper
 or from ROS side (refer to the i5_driver README)
 
 2. In ROS pc, run (take moveit as an example):
-
 `roslaunch i5_a3_moveit_config moveit_planning_execution.launch sim:=false robot_ip:=your_robot_ip`
-
 There are two args you must set for the launch.
+	**sim** set sim to true if you only want to run a simulator in ROS. In this case, no controller will be connected.
 
-**sim** set sim to true if you only want to run a simulator in ROS. In this case, no controller will be connected.
-
-**robot_ip** is the robot ip address you want connect, for example: `192.168.1.100`. If `sim` set to true, `robot_ip` is not needed.
-
+	**robot_ip** is the robot ip address you want connect, for example: `192.168.1.100`. If `sim` set to true, `robot_ip` is not needed.
 
 3. Change the robot to`playback`or`remote`mode by robot teach pandent or from ROS side (refer to the i5_driver README). **(Remember you must switch the robot to `playback` or `remote` mode not 'teach' mode, because teach is used for manual jog)**
 
