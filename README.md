@@ -29,9 +29,12 @@ Install Steps:
 
 2. Install MoveIt
 `sudo apt install ros-kinetic-moveit*`
+
 3. Install ROS Industrial
 `sudo apt install ros-kinetic-industrial*`	
+
 4. Install i5_robot
+
 To install i5_robot packages, you need firstly create a catkine workspace.You can do it follow [this](http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment) page.
 Once you create a cakin workspace(named *catkin_ws*), you can checkout the i5_robot src and compile it.
 ```
@@ -56,6 +59,12 @@ or from ROS side (refer to the i5_driver README)
 
 2. In ROS pc, run (take moveit as an example):
 `roslaunch i5_a3_moveit_config moveit_planning_execution.launch sim:=false robot_ip:=your_robot_ip`
+There are two args you must set for the launch.
+
+**sim** set sim to true if you only want to run a simulator in ROS. In this case, no controller will be connected.
+
+**robot_ip** is the robot ip address you want connect, for example: `192.168.1.100`. If `sim` set to true, `robot_ip` is not needed.
+
 
 3. Change the robot to`playback`or`remote`mode by robot teach pandent or from ROS side (refer to the i5_driver README). **(Remember you must switch the robot to `playback` or `remote` mode not 'teach' mode, because teach is used for manual jog)**
 
@@ -69,4 +78,9 @@ Note:
 source ~/catkin_ws/devel/setup.bash
 ```
 2. Do not try to manipulate the robot from teach pendant and ROS side simultaneously (for example, sending trajcectory from ROS and execute a program from teach pandent simultaneously).
+
+
+
+
+
 
