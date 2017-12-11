@@ -10,10 +10,12 @@
 -->
 <launch>
   <arg name="robot_ip" doc="IP of controller" />
+  <arg name="use_pt_full" default="true" />
 
   <rosparam command="load" file="$(find i5_a3_support)/config/joint_names_a3.yaml" />
 
   <include file="$(find i5_driver)/launch/robot_interface_streaming.launch">
-    <arg name="robot_ip"   value="$(arg robot_ip)" />
+    <arg name="robot_ip" value="$(arg robot_ip)" />
+    <arg name="use_pt_full"  value="$(arg use_pt_full)" />
   </include>
 </launch>

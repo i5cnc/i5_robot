@@ -16,6 +16,7 @@
   <!-- the "sim" argument controls whether we connect to a Simulated or Real robot -->
   <!--  - if sim=false, a robot_ip argument is required -->
   <arg name="sim" default="true" />
+  <arg name="use_pt_full" default="true" />
   <arg name="robot_ip" unless="$(arg sim)" />
  
   <!-- load the robot_description parameter before launching ROS-I nodes -->
@@ -34,6 +35,7 @@
   <group unless="$(arg sim)">
     <include file="$(find i5_a3_support)/launch/robot_interface_streaming_a3.launch" >
       <arg name="robot_ip" value="$(arg robot_ip)"/>
+      <arg name="use_pt_full" value="$(arg use_pt_full)" />
     </include>
   </group>
 

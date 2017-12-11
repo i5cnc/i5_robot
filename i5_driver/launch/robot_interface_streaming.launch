@@ -21,6 +21,7 @@
 
 	<!-- robot_ip: IP-address of the robot's socket-messaging server -->
 	<arg name="robot_ip" />
+	<arg name="use_pt_full" default="true"/>
 
 
 	<!-- copy the specified parameters to the Parameter Server, for 
@@ -39,6 +40,7 @@
 	-->
 	<include file="$(find i5_driver)/launch/motion_streaming_interface.launch">
 		<arg name="robot_ip"   value="$(arg robot_ip)" />
+		<arg name="use_pt_full"   value="$(arg use_pt_full)" />
 	</include>
 	
 	<!-- io_service: read and write io
