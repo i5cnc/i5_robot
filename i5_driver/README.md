@@ -50,16 +50,17 @@ Currently, io provides two services:
 the node is **system_service**
 Currently, system provides one service:
 - ExecuteApplicationCmd
-| comand | action |
-|--------|--------|
-| 0 | servo on the robot |
-| 1 | enable robot |
-| 2 | disable robot |
-| 3 | change the robot mode to `playback` |
-| 4 | change the robot mode to `teach` |
-| 5 | change the robot mode to `remote` |
-| 6 | stop current motion |
-| 7 | do a reset, used for error reset |
+
+	| comand | action |
+	|--------|--------|
+	| 0 | servo on the robot |
+	| 1 | enable robot |
+	| 2 | disable robot |
+	| 3 | change the robot mode to `playback` |
+	| 4 | change the robot mode to `teach` |
+	| 5 | change the robot mode to `remote` |
+	| 6 | stop current motion |
+	| 7 | do a reset, used for error reset |
 
 
 # state
