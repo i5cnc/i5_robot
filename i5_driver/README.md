@@ -6,6 +6,36 @@ Connection services are classified into four types:
 - **system** provide some system level interface.(enable, disable, etc.)
 - **state** provide the robot and joint state interface.
 
+#io
+the node is **io_service**
+Currently, io provides two services:
+- WriteDigitalOutput
+- ReadDigitalInput
+
+
+#system
+the node is **system_service**
+Currently, system provides one service:
+- ExecuteApplicationCmd
+| comand | action |
+|--------|--------|
+| 0 | servo on the robot |
+| 1 | enable robot |
+| 2 | disable robot |
+| 3 | change the robot mode to `playback` |
+| 4 | change the robot mode to `teach` |
+| 5 | change the robot mode to `remote` |
+| 6 | stop current motion |
+| 7 | do a reset, used for error reset |
+
+
+#state
+the node is **robot_state**
+According to ros indsutrial spec, all the following topics are provided
+- feedback_states
+- joint_states
+- robot_status
+
 # motion
 the node are **motion_streaming_interface**
 Based on the ros industrial spec, two types motion control interface are provided, **stream** and **download**.
@@ -30,7 +60,8 @@ The **JointTrajPtFullMessage** contains time,position,velocity and acceleration 
 the node **motion_streaming_interface** in the **industrial_robot_client** package use **JointTrajPtMessage** to communicate with robot. it internally implmented a simple time parameterization of path.
 
 the node **motion_streaming_interface** in the **i5_driver** package use **JointTrajPtFullMessage** to communicate with robot. no time parameterization is implemented in this node. It only receives **trajectory_msgs/JointTrajectory** and fullfill **JointTrajPtFullMessage** with its data. 
-So user must implement the time parameterization by themselves..
+
+So user must implement the time parameterization by themselves.
 
 The launch file **motion_streaming_interface.launch** has an arg called **use_pt_full**, if this arg set to true, the node  **motion_streaming_interface** in the **i5_driver** package will be used, otherwise the node **motion_streaming_interface** in the **industrial_robot_client** package will be used.
 
@@ -38,37 +69,6 @@ For example, MoveIt implemented its own time parameterization.So when user use M
 
 But for some applications, if user only knows the path points and duration time,then only **motion_streaming_interface** in the **industrial_robot_client** package can be used.
 
-#io
-the node is **io_service**
-Currently, io provides two services:
-- WriteDigitalOutput
-- ReadDigitalInput
-
-
-#system
-the node is **system_service**
-Currently, system provides one service:
-- ExecuteApplicationCmd
-| comand | action |
-|--------|--------|
-| 0 | servo on the robot |
-| 1 | enable robot |
-| 2 | disable robot |
-| 3 | change the robot mode to `playback` |
-| 4 | change the robot mode to `teach` |
-| 5 | change the robot mode to `remote` |
-| 6 | stop current motion |
-| 7 | do a reset, used for error reset |
-
-
-
-
-#state
-the node is **robot_state**
-According to ros indsutrial spec, all the following topics are provided
-- feedback_states
-- joint_states
-- robot_status
 
 
 
