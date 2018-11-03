@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!-- 
+  Wrapper launch file for the i5 specific motion streaming interface node.
+-->
+<launch>
+  <!-- IP of robot (or PC running simulation) -->
+  <arg name="robot_ip" doc="IP of controller" />
+  <arg name="use_pt_full" default="true" doc="use of pt full" />
+
+  <!-- put them on the parameter server -->
+  <param name="robot_ip_address" type="str" value="$(arg robot_ip)" />
+  
+  <!-- load the correct version of the motion streaming node -->
+  
+  <!-- if arg "use_pt_full" is true, we use motion streaming interface in i5_driver which create pt_full msg -->
+  <group if="$(arg use_pt_full)">
+    <node name="motion_streaming_interface_pt_full" pkg="i5_driver" type="motion_streaming_interface" />
+  </group>
+  <!-- if arg "use_pt_full" is false, we use motion streaming interface in industrial_robot_clien which create pt msg -->
+  <group unless="$(arg use_pt_full)">
+    <node name="motion_streaming_interface" pkg="industrial_robot_client" type="motion_streaming_interface"/>
+  </group>
+    
+  <node pkg="industrial_robot_client" type="joint_trajectory_action" 
+	name="joint_trajectory_action" />
+</launch>

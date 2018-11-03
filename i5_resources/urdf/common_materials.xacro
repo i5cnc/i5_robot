@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find i5_resources)/urdf/common_colours.xacro"/>
+
+  <xacro:macro name="material_i5_yellow" params="name">
+    <material name="${name}">
+      <color rgba="${color_i5_yellow}"/>
+    </material>
+  </xacro:macro>
+
+  <xacro:macro name="material_i5_white" params="name">
+    <material name="${name}">
+      <color rgba="${color_i5_white}"/>
+    </material>
+  </xacro:macro>
+
+  <xacro:macro name="material_i5_grey" params="name">
+    <material name="${name}">
+      <color rgba="${color_i5_grey}"/>
+    </material>
+  </xacro:macro>
+
+  <xacro:macro name="material_i5_blue" params="name">
+    <material name="${name}">
+      <color rgba="${color_i5_blue}"/>
+    </material>
+  </xacro:macro>
+
+  <xacro:macro name="material_i5_black" params="name">
+    <material name="${name}">
+      <color rgba="${color_i5_black}"/>
+    </material>
+  </xacro:macro>
+
+  <xacro:macro name="material_i5_greyish" params="name">
+    <material name="${name}">
+      <color rgba="${color_i5_greyish}"/>
+    </material>
+  </xacro:macro>
+
+  <xacro:macro name="material_i5_green" params="name">
+    <material name="${name}">
+      <color rgba="${color_i5_green}"/>
+    </material>
+  </xacro:macro>
+
+</robot>
