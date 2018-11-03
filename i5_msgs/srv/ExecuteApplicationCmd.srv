@@ -1,0 +1,7 @@
+int32 command
+int32[10] param_data_i
+float64[10] param_data_r
+---
+int32[10] ret_data_i
+float64[10] ret_data_r
+industrial_msgs/ServiceReturnCode code
