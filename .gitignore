@@ -3,7 +3,11 @@
 .cproject
 
 #setup assistant
+<<<<<<< HEAD
 #.setup_assistant
+=======
+.setup_assistant
+>>>>>>> 9c05cf4511a0d49d12ef09447641b01f48edc4df
 
 
 # Prerequisites
