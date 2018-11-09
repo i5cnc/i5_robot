@@ -61,6 +61,8 @@ Currently, system provides one service:
 	| 5 | change the robot mode to `remote` |
 	| 6 | stop current motion |
 	| 7 | do a reset, used for error reset |
+	| 8 | pause robot program execution |
+	| 9 | resume robot program execution |
 
 
 # state
