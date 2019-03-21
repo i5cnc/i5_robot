@@ -55,24 +55,27 @@ WriteSingleIO::~WriteSingleIO(void)
 void WriteSingleIO::init()
 {
   // TODO: is '0' a good initial value?
-  this->init(0, 0);
+  this->init(-1, 0, 0);
 }
 
-void WriteSingleIO::init(shared_int address, shared_int value)
+void WriteSingleIO::init(shared_int type, shared_int address, shared_int value)
 {
+  this->setType(type);
   this->setAddress(address);
   this->setValue(value);
 }
 
 void WriteSingleIO::copyFrom(WriteSingleIO &src)
 {
+  this->setType(src.getType());
   this->setAddress(src.getAddress());
   this->setValue(src.getValue());
 }
 
 bool WriteSingleIO::operator==(WriteSingleIO &rhs)
 {
-  bool rslt = this->address_ == rhs.address_ &&
+  bool rslt = this->type_ == rhs.type_ &&
+              this->address_ == rhs.address_ &&
               this->value_ == rhs.value_;
 
   return rslt;
@@ -81,6 +84,12 @@ bool WriteSingleIO::operator==(WriteSingleIO &rhs)
 bool WriteSingleIO::load(industrial::byte_array::ByteArray *buffer)
 {
   LOG_COMM("Executing WriteSingleIO command load");
+
+  if (!buffer->load(this->type_))
+  {
+    LOG_ERROR("Failed to load WriteSingleIO type");
+    return false;
+  }
 
   if (!buffer->load(this->address_))
   {
@@ -111,6 +120,12 @@ bool WriteSingleIO::unload(industrial::byte_array::ByteArray *buffer)
   if (!buffer->unload(this->address_))
   {
     LOG_ERROR("Failed to unload WriteSingleIO address");
+    return false;
+  }
+
+  if (!buffer->unload(this->type_))
+  {
+    LOG_ERROR("Failed to unload WriteSingleIO type");
     return false;
   }
 

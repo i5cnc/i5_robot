@@ -50,7 +50,6 @@ namespace simple_message
 {
 namespace io_message
 {
-
 /**
  * \brief Class encapsulated i5 write single io message generation methods
  * (either to or from a industrial::simple_message::SimpleMessage type.

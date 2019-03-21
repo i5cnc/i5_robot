@@ -94,6 +94,7 @@ bool IOService::writeDigitalOutputCB(i5_msgs::WriteDigitalOutput::Request &req,
 
   industrial::simple_message::SimpleMessage msg, reply;
 
+  io_msg.cmd_.setType(req.type);
   io_msg.cmd_.setAddress(req.index);
   io_msg.cmd_.setValue(req.value);
 
@@ -119,6 +120,7 @@ bool IOService::readDigitalInputCB(i5_msgs::ReadDigitalInput::Request &req, i5_m
 
   industrial::simple_message::SimpleMessage msg, reply;
 
+  io_msg.cmd_.setType(req.type);
   io_msg.cmd_.setAddress(req.index);
   io_msg.cmd_.setValue(-1);  // default invalid value
 
