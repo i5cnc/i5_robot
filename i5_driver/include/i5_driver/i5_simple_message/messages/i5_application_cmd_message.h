@@ -44,15 +44,12 @@
 #include "i5_simple_message/i5_application_cmd.h"
 #include "i5_simple_message/i5_simple_message.h"
 
-
-
 namespace i5
 {
 namespace simple_message
 {
 namespace system_message
 {
-
 /**
  * \brief Class encapsulated i5 application cmd message generation methods
  * (either to or from a industrial::simple_message::SimpleMessage type.

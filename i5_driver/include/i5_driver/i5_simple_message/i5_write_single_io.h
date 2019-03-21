@@ -47,8 +47,18 @@ namespace io
        * \brief Initializes a complete write single io command
        *
        */
-      void init(industrial::shared_types::shared_int address,
+      void init(industrial::shared_types::shared_int type, industrial::shared_types::shared_int address,
         industrial::shared_types::shared_int value);
+
+      /**
+       * \brief Sets type
+       *
+       * \param type Type of the targeted IO element.
+       */
+      void setType(industrial::shared_types::shared_int type)
+      {
+        this->type_ = type;
+      }
 
       /**
        * \brief Sets address
@@ -68,6 +78,16 @@ namespace io
       void setValue(industrial::shared_types::shared_int value)
       {
         this->value_ = value;
+      }
+
+      /**
+       * \brief Returns the type of the IO element
+       *
+       * \return type
+       */
+      industrial::shared_types::shared_int getType()
+      {
+        return this->type_;
       }
 
       /**
@@ -109,10 +129,15 @@ namespace io
       bool unload(industrial::byte_array::ByteArray *buffer);
       unsigned int byteLength()
       {
-        return 2 * sizeof(industrial::shared_types::shared_int);
+        return 3 * sizeof(industrial::shared_types::shared_int);
       }
 
     private:
+      /**
+       * \brief Type of IO element.
+       */
+      industrial::shared_types::shared_int type_;
+
       /**
        * \brief Address of IO element.
        */
