@@ -1,1 +1,1 @@
-rosrun moveit_ikfast create_ikfast_moveit_plugin.py i5_a3 manipulator i5_a3_ik_fast /home/i5/catkin_ws/src/i5_robot/i5_a3_ik_fast/src/i5_a3_manipulator_ikfast_solver.cpp
+rosrun moveit_kinematics create_ikfast_moveit_plugin.py --search_mode=OPTIMIZE_MAX_JOINT --srdf_filename=i5_a3.srdf --robot_name_in_srdf=i5_a3 --moveit_config_pkg=i5_a3_moveit_config i5_a3 manipulator i5_a3_ik_fast base_link tool0 /home/liufang/industrial_ws/src/i5_robot/i5_a3_ik_fast/src/i5_a3_manipulator_ikfast_solver.cpp
